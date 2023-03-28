@@ -1,11 +1,11 @@
 $(function () {
-  $('.menu-trigger').click(function () {
-    $(this).toggleClass('active');
-    $('.gnavi').css('display', 'block');
-    if ($(this).hasClass('active')) {
-      $('.gnavi').addClass('active');
-    } else {
-      $('.gnavi').removeClass('active');
+  $('.menu-trigger').click(function () { //メニューボタンタップ後の処理
+    $(this).toggleClass('active'); //クリックした要素に「.active」要素を付与
+    $('.gnavi').css('display', 'block');//「.gnavi」要素の非表示を表示する
+    if ($(this).hasClass('active')) { //もしクリックした要素に「.active」要素があれば
+      $('.gnavi').addClass('active');　 //「.active」要素を付与
+    } else {                            //「.active」要素が無ければ
+      $('.gnavi').removeClass('active'); //「.active」要素を外す
     }
   });
 });
@@ -23,21 +23,21 @@ $(function () {
 
   toggleChangeBtn();
 
-  $('.next').click(function () {
-    var $displaySlide = $('.active');
-    $displaySlide.removeClass('active box-design');
-    $displaySlide.next().addClass('active box-design');
-    toggleChangeBtn();
+  $('.next').click(function () {/*nextボタンを押したとき*/
+    var $displaySlide = $('.active');/*現在表示中のスライドを取得*/
+    $displaySlide.removeClass('active box-design');/*そのスライドからactiveクラスを除いて表示されないようにする。*/
+    $displaySlide.next().addClass('active box-design');/*次のスライドにactiveクラスをつけ、表示させる。*/
+    toggleChangeBtn();/*nextボタンを隠すか判断*/
   });
-  $('.prev').click(function () {
-    var $displaySlide = $('.active');
-    $displaySlide.removeClass('active box-design');
-    $displaySlide.prev().addClass('active box-design');
-    toggleChangeBtn();
+  $('.prev').click(function () {/*prevボタンを押したとき*/
+    var $displaySlide = $('.active');/*現在表示中のスライドを取得*/
+    $displaySlide.removeClass('active box-design');/*そのスライドからactiveクラスを除いて表示されないようにする。*/
+    $displaySlide.prev().addClass('active box-design');/*前のスライドにactiveクラスをつけ、表示させる。*/
+    toggleChangeBtn();/*prevボタンを隠すか判断*/
   });
 });
 
-
+// ③モーダル部分
 
 $(function () {
   $('.modalopen').each(function () {
@@ -81,3 +81,4 @@ $(function () {
     }
   });
 });
+
